@@ -5,7 +5,7 @@ module.exports = {
       script: "./dist/index.js", // TypeScript compiled output
       instances: "max",
       exec_mode: "cluster",
-      watch: false,
+      
       max_memory_restart: "500M",
       error_file: "./logs/err.log",
       out_file: "./logs/out.log",
