@@ -16,6 +16,23 @@ app.get("/", (req: Request, res: Response) => {
 
 
 
+// create expess js routes to retun a random quotes
+const quotes = [
+  "Be yourself; everyone else is already taken.",
+  "Success is not final, failure is not fatal.",
+  "Do what you can, with what you have, where you are.",
+  "Dream big and dare to fail.",
+  "Stay hungry, stay foolish."
+];
+app.get("/quote", (req: Request, res: Response) => {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const randomQuote = quotes[randomIndex];
+  return res.json({ quote: randomQuote });
+});
+
+
+
+
 
 
 app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));
