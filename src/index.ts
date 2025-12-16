@@ -22,7 +22,7 @@ const quotes = [
   "Success is not final, failure is not fatal.",
   "Do what you can, with what you have, where you are.",
   "Dream big and dare to fail.",
-  "Stay hungry, stay foolish."
+  
 ];
 app.get("/quote", (req: Request, res: Response) => {
   const randomIndex = Math.floor(Math.random() * quotes.length);
