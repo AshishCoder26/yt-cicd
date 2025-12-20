@@ -26,7 +26,7 @@ const quotes = [
 ];
 app.get("/quote", (req: Request, res: Response) => {
   const randomIndex = Math.floor(Math.random() * quotes.length);
-  const randomQuote = quotes[randomIndex];
+  
   return res.json({ quote: randomQuote });
 });
 
