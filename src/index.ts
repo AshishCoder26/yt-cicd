@@ -3,7 +3,7 @@ import type { Application, Request, Response } from "express";
 import "dotenv/config";
 import cors from "cors";
 const app: Application = express();
-const PORT = process.env.PORT || 7000;
+const PORT = Number(process.env.PORT) || 7000;
 
 // * Middleware
 app.use(cors());
@@ -16,7 +16,7 @@ app.get("/", (req: Request, res: Response) => {
 
 
 
-// create expess js routes to retun a random quotes
+// Create Express route to return a random quote
 const quotes = [
   "Be yourself; everyone else is already taken.",
   "Success is not final, failure is not fatal.",
@@ -26,7 +26,7 @@ const quotes = [
 ];
 app.get("/quote", (req: Request, res: Response) => {
   const randomIndex = Math.floor(Math.random() * quotes.length);
-  
+  const randomQuote = quotes[randomIndex];
   return res.json({ quote: randomQuote });
 });
 
@@ -35,6 +35,11 @@ app.get("/quote", (req: Request, res: Response) => {
 
 
 
-app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server is running on PORT ${PORT}`);
+  console.log(`Bound to 0.0.0.0 — test with http://localhost:${PORT}`);
+});
+
+export default app;
 
 

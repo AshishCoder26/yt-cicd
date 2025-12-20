@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
+    "prestart": "npm run build",
     "start": "node dist/index.js",
     "watch": "tsc -w",
-    "dev": "tsx watch src/index.ts"
+    "dev": "tsx watch src/index.ts",
+    "start:dev": "npm run dev"
   },
   "keywords": [],
   "author": "",
