@@ -35,6 +35,7 @@ app.get("/quote", (req: Request, res: Response) => {
 
 
 
+
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server is running on PORT ${PORT}`);
   console.log(`Bound to 0.0.0.0 — test with http://localhost:${PORT}`);
