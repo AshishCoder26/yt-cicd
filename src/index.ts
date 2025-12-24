@@ -20,7 +20,6 @@ app.get("/", (req: Request, res: Response) => {
 const quotes = [
   "Be yourself; everyone else is already taken.",
   "Success is not final, failure is not fatal.",
-  "Do what you can, with what you have, where you are.",
   "Dream big and dare to fail.",
   
 ];
